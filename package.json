@@ -1,0 +1,26 @@
+{
+  "name": "pivote",
+  "version": "0.1.0",
+  "description": "Pivote: calculadora de matrices paso a paso (Micro-SaaS)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p . && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -p .",
+    "build:demo": "VITE_DEMO=1 vite build --mode demo"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-singlefile": "^2.2.0",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "katex": "^0.16.22"
+  },
+  "private": true,
+  "type": "module"
+}
