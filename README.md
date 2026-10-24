@@ -39,7 +39,7 @@ npm run build      # typecheck + bundle en dist/
 ## Activar Google AdSense
 
 1. Entra a https://adsense.google.com con tu cuenta de Google y agrega tu dominio.
-2. Copia tu ID de editor (`ca-pub-…`) y agrégalo en Netlify → Site configuration → Environment variables como `VITE_ADSENSE_CLIENT`. Vuelve a desplegar: el sitio cargará el script y publicará `/ads.txt` automáticamente.
+2. El ID de editor `ca-pub-3963398476293536` ya está en `src/services/config.ts`: el sitio carga el script de AdSense y publica `/ads.txt` automáticamente. Para usar otro ID, define `VITE_ADSENSE_CLIENT` en Netlify.
 3. Pide la revisión del sitio en AdSense. Suele tardar de unos días a 2 semanas.
 4. Cuando te aprueben, crea dos bloques en Anuncios → Por bloque de anuncios → Anuncios de display (adaptables) y agrega sus IDs:
    - `VITE_ADSENSE_SLOT_RESULT`: debajo del resultado.

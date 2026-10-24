@@ -12,7 +12,7 @@ import { MAX_SIZE, LOCAL_HISTORY } from './shared/limits';
 import { CLOUD_ENABLED, DEMO } from './services/config';
 import { initAccount, onAccountChange, getAccount, signInWithEmail, signInWithGoogle, signOut, saveProfile } from './services/account';
 import { listHistory, saveHistory, deleteHistory, encodeShare, decodeShare, cloudOn, SavedInput, HistoryItem } from './services/history';
-import { adSlot } from './ui/ads';
+import { adSlot, initAds } from './ui/ads';
 
 // ── Estado ─────────────────────────────────────────────────────────
 
@@ -360,6 +360,8 @@ document.getElementById('app')!.append(
     .filter((x): x is HTMLElement => Boolean(x)),
 );
 footerAd?.activate();
+// Carga AdSense aunque aún no haya bloques: lo necesita la verificación del sitio y los Anuncios automáticos.
+initAds();
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); calculate(); }

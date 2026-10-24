@@ -11,7 +11,13 @@ export const CLOUD_ENABLED = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 // Sin VITE_ADSENSE_CLIENT no se carga ningún anuncio (útil en desarrollo).
 
 /** ID de editor, formato "ca-pub-1234567890123456". */
-export const ADSENSE_CLIENT = (import.meta.env.VITE_ADSENSE_CLIENT as string | undefined)?.trim() || undefined;
+/** ID de editor de Pivote. Es público (aparece en el código de cada página); se puede cambiar con VITE_ADSENSE_CLIENT. */
+export const DEFAULT_ADSENSE_CLIENT = 'ca-pub-3963398476293536';
+
+/** En la demo no se cargan anuncios reales. */
+export const ADSENSE_CLIENT = import.meta.env.VITE_DEMO === '1'
+  ? undefined
+  : (import.meta.env.VITE_ADSENSE_CLIENT as string | undefined)?.trim() || DEFAULT_ADSENSE_CLIENT;
 
 /** IDs de bloque de anuncios creados en AdSense (Anuncios → Por bloque de anuncios). */
 export const ADSENSE_SLOTS = {

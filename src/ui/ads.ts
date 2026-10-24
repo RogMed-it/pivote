@@ -16,6 +16,8 @@ let loaded = false;
 
 function loadScript() {
   if (loaded || !ADSENSE_CLIENT) return;
+  // En producción el script ya viene en el <head> (lo inserta vite.config.ts).
+  if (document.querySelector('script[src*="adsbygoogle.js"]')) { loaded = true; return; }
   loaded = true;
   const s = document.createElement('script');
   s.async = true;
